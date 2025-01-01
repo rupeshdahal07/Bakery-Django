@@ -23,16 +23,33 @@
         		<div class="price_list_inner">
         			<div class="single_pest_title">
         				<h2>Our Price List</h2>
+						
         				<p>Discover our menu of freshly baked bread, decadent cakes, pastries, and savory delights. From classic croissants to rich chocolate cakes, there’s something for everyone. Pair your treat with our aromatic coffee or refreshing drinks for the perfect experience!</p>
         			</div>
        				<div class="row">
        					<div class="col-lg-6">
+							
        						<div class="discover_item_inner">
+								<h3 >Cupcake: </h3>
+								<hr>
+								{% for item in cupcake %}
        							<div class="discover_item">
-									<h4>Double Chocolate Pie</h4>
-									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>
+									<h4>{{item.name}}</h4>
+									<p>{{item.description}} <span>रु.{{item.price|floatformat:0}}</span></p>
 								</div>
+								{% endfor %}
+
+								<br>
+
+								<h3 >Cake: </h3>
+								<hr>
+								{% for item in cupcake %}
        							<div class="discover_item">
+									<h4>{{item.name}}</h4>
+									<p>{{item.description}} <span>रु.{{item.price|floatformat:0}}</span></p>
+								</div>
+								{% endfor %}
+       							{% comment %} <div class="discover_item">
 									<h4>Zabaglione Cake</h4>
 									<p>Chocolate puding, vanilla, fruite rasberry jam evporate milk <span>$12.99</span></p>
 								</div>
@@ -59,11 +76,13 @@
        							<div class="discover_item">
 									<h4>Cupcake of Vanela</h4>
 									<p>Chocolate puding, vanilla, fruite rasberry jam evporate milk <span>$20.00</span></p>
-								</div>
+								</div> {% endcomment %}
        						</div>
        					</div>
        					<div class="col-lg-6">
        						<div class="discover_item_inner">
+								<h3 >Bakery: </h3>
+								<hr>
        							<div class="discover_item">
 									<h4>Fried Egg Sandwich</h4>
 									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>

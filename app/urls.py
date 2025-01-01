@@ -1,9 +1,13 @@
 from django.urls import path, include # Add this line to include the app's urls in the project
-from . import views
+from app import views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth import views as auth_view
+from .forms import LoginForm
 
 urlpatterns = [
     
-    path('', views.home, name="home"),
+    path('', views.HomeView.as_view(), name="home"),
     path('home2/', views.home2, name='home2'),  # Corresponds to Home 2
     path('home3/', views.home3, name='home3'),  # Corresponds to Home 3
     path('home4/', views.home4, name='home4'),  # Corresponds to Home 4
@@ -13,5 +17,11 @@ urlpatterns = [
     path('about/', views.about, name='about'),  # Corresponds to About   
     path('contact/', views.contact, name='contact'),  # Corresponds to Contact
     path('cart/', views.cart, name='cart'),  # Corresponds to Cart
+    path('checkout/', views.checkout, name='checkout'),  # Corresponds to Checkout
+    path('shop/', views.shop, name='main_shop'),  # Corresponds to Shop
 
-]
+    path('accounts/login/', auth_view.LoginView.as_view(template_name='app/login.html', 
+                                                        authentication_form=LoginForm),
+                                                        name='login'),
+
+]+ static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)

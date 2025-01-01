@@ -124,13 +124,14 @@
 								<li class="dropdown submenu">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
 									<ul class="dropdown-menu">
-										<li><a href="shop.html">Main shop</a></li>
+										<li><a href="{% url "main_shop" %}">Main shop</a></li>
 										<li><a href="product-details.html">Product Details</a></li>
-										<li><a href="cart.html">Cart Page</a></li>
-										<li><a href="checkout.html">Checkout Page</a></li>
+										<li><a href="{% url "cart" %}">Cart Page</a></li>
+										<li><a href="{% url "checkout" %}">Checkout Page</a></li>
 									</ul>
 								</li>
 								<li><a href="{% url "contact" %}">Contact Us</a></li>
+								<li><a href="{% url "login" %}">Login</a></li>
 							</ul>
 						</div>
 					</nav>

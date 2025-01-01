@@ -9,8 +9,8 @@
         		<div class="banner_text">
         			<h3>Our Cakes</h3>
         			<ul>
-        				<li><a href="index.html">Home</a></li>
-        				<li><a href="cakes.html">Services</a></li>
+        				<li><a href="{% url "home" %}">Home</a></li>
+        				<li><a href="{% url "our_cake" %}">Services</a></li>
         			</ul>
         		</div>
         	</div>
@@ -25,10 +25,27 @@
         			<h5>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</h5>
         		</div>
         		<div class="cake_feature_row row">
+					{% for item in cupcake %}
 					<div class="col-lg-3 col-md-4 col-6">
 						<div class="cake_feature_item">
 							<div class="cake_img">
-								<img src="img/cake-feature/c-feature-1.jpg" alt="">
+								<img src="{{item.image.url}}" alt="">
+							</div>
+							<div class="cake_text">
+								<h4>Rs.{{item.price|floatformat:0}}</h4>
+								<h3>{{item.name}}</h3>
+								<a class="pest_btn" href="#">Add to cart</a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+					
+					{% comment %}
+					 <div class="col-lg-3 col-md-4 col-6">
+						<div class="cake_feature_item">
+							<div class="cake_img">
+								<img src="{% static "app/img/cake-feature/c-feature-2.jpg" %}" alt="">
 							</div>
 							<div class="cake_text">
 								<h4>$29</h4>
@@ -37,18 +54,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-4 col-6">
-						<div class="cake_feature_item">
-							<div class="cake_img">
-								<img src="img/cake-feature/c-feature-2.jpg" alt="">
-							</div>
-							<div class="cake_text">
-								<h4>$29</h4>
-								<h3>Strawberry Cupcakes</h3>
-								<a class="pest_btn" href="#">Add to cart</a>
-							</div>
-						</div>
-					</div>
+					
 					<div class="col-lg-3 col-md-4 col-6">
 						<div class="cake_feature_item">
 							<div class="cake_img">
@@ -168,7 +174,7 @@
 								<a class="pest_btn" href="#">Add to cart</a>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 				</div>
         	</div>
         </section>
@@ -181,7 +187,7 @@
         			<div class="item">
         				<div class="media">
         					<div class="d-flex">
-        						<img src="img/recipe/recipe-1.png" alt="">
+        						<img src="{% static "app/img/recipe/recipe-1.png" %}" alt="">
         					</div>
         					<div class="media-body">
         						<h4>Special Recipe</h4>
@@ -193,7 +199,7 @@
         			<div class="item">
         				<div class="media">
         					<div class="d-flex">
-        						<img src="img/recipe/recipe-1.png" alt="">
+        						<img src="{% static "app/img/recipe/recipe-1.png" %}" alt="">
         					</div>
         					<div class="media-body">
         						<h4>Special Recipe</h4>
@@ -205,7 +211,7 @@
         			<div class="item">
         				<div class="media">
         					<div class="d-flex">
-        						<img src="img/recipe/recipe-1.png" alt="">
+        						<img src="{% static "app/img/recipe/recipe-1.png" %}" alt="">
         					</div>
         					<div class="media-body">
         						<h4>Special Recipe</h4>
@@ -217,7 +223,7 @@
         			<div class="item">
         				<div class="media">
         					<div class="d-flex">
-        						<img src="img/recipe/recipe-1.png" alt="">
+        						<img src="{% static "app/img/recipe/recipe-1.png" %}" alt="">
         					</div>
         					<div class="media-body">
         						<h4>Special Recipe</h4>

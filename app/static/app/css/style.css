@@ -2606,7 +2606,7 @@ i:before {
 
 .discover_menu_area:after {
   content: "";
-  background: url(../img/menu-right.png) no-repeat scroll center center;
+  background: url("../img/menu-right.png") no-repeat scroll center center;
   width: 260px;
   height: 640px;
   position: absolute;
@@ -3570,6 +3570,17 @@ i:before {
 
 .main_blog_column .col-lg-6 {
   margin-bottom: 80px;
+}
+
+.row .col-lg-6 h3 {
+  font-size: 30px;
+  color: #3e606b;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+  -webkit-transition: all 400ms linear 0s;
+  -o-transition: all 400ms linear 0s;
+  transition: all 400ms linear 0s;
 }
 
 .blog_item {

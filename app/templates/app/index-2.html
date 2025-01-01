@@ -7,6 +7,7 @@
         <section class="main_slider_area">
             <div id="main_slider" class="rev_slider" data-version="5.3.1.6">
                 <ul>
+					
                     <li data-index="rs-1587" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="img/home-slider/slider-3.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
                     <img src="{% static 'app/img/home-slider/slider-3.jpg' %}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
@@ -37,7 +38,7 @@
                                 data-type="text" 
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
-                                data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit quia consequuntur magni dolores eos qui ratione
+                                data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">Indulge in the warmth of freshly baked goods and the rich aroma of handcrafted coffee. At Wake & Bake, we believe in delivering joy one bite and sip at a time.
                             </div>
                             
                             <div class="tp-caption tp-resizeme slider_button" 
@@ -51,7 +52,7 @@
                                 data-type="text" 
                                 data-responsive_offset="on" 
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
-                                <a class="main_btn" href="#">See the recipe</a>
+                                <a class="main_btn" href="{% url "menu" %}">See the menu</a>
                             </div>
                         </div>
                     </li>
@@ -87,7 +88,7 @@
                                 data-type="text" 
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
-                                data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit quia consequuntur magni dolores eos qui ratione
+                                data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">Indulge in the warmth of freshly baked goods and the rich aroma of handcrafted coffee. At Wake & Bake, we believe in delivering joy one bite and sip at a time.
                             </div>
                             
                             <div class="tp-caption tp-resizeme slider_button" 
@@ -101,7 +102,7 @@
                                 data-type="text" 
                                 data-responsive_offset="on" 
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
-                                <a class="main_btn" href="#">See the recipe</a>
+                                <a class="main_btn" href="{% url "menu" %}">See the menu</a>
                             </div>
                         </div>
                     </li>
@@ -137,7 +138,7 @@
                                 data-type="text" 
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
-                                data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit quia consequuntur magni dolores eos qui ratione
+                                data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">Indulge in the warmth of freshly baked goods and the rich aroma of handcrafted coffee. At Wake & Bake, we believe in delivering joy one bite and sip at a time.
                             </div>
                             
                             <div class="tp-caption tp-resizeme slider_button" 
@@ -151,7 +152,7 @@
                                 data-type="text" 
                                 data-responsive_offset="on" 
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
-                                <a class="main_btn" href="#">See the recipe</a>
+                                <a class="main_btn" href="{% url "menu" %}">See the menu</a>
                             </div>
                         </div>
                     </li>
@@ -168,19 +169,24 @@
 					<h5> Seldolor sit amet consect etur</h5>
 				</div>
 				<div class="cake_feature_row row">
+
+					{% for item in cupcake %}
 					<div class="col-lg-3 col-md-4 col-6">
 						<div class="cake_feature_item">
 							<div class="cake_img">
-								<img src="{% static "app/img/cake-feature/c-feature-1.jpg" %}" alt="">
+								<img src="{{item.image.url}}" alt="{{item.name}}">
 							</div>
 							<div class="cake_text">
-								<h4>Rs.29</h4>
-								<h3>Strawberry Cupcakes</h3>
+								<h4>Rs.{{item.price|floatformat:0}} </h4>
+								<h3>{{item.name}}</h3>
 								<a class="pest_btn" href="#">Add to cart</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-4 col-6">
+
+					{% endfor %}
+
+					{% comment %} <div class="col-lg-3 col-md-4 col-6">
 						<div class="cake_feature_item">
 							<div class="cake_img">
 								<img src="{% static "app/img/cake-feature/c-feature-2.jpg" %}" alt="">
@@ -263,7 +269,7 @@
 								<a class="pest_btn" href="#">Add to cart</a>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 				</div>
         	</div>
         </section>
@@ -284,7 +290,7 @@
         						</div>
         						<div class="media-body">
         							<a href="#"><h4>Cookies Cakes</h4></a>
-        							<p>Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply.</p>
+        							<p>Delight in the irresistible charm of our freshly baked cookies cakes, crafted to perfection for every occasion.</p>
         						</div>
         					</div>
         				</div>
@@ -297,7 +303,7 @@
         						</div>
         						<div class="media-body">
         							<a href="#"><h4>Tasty Cupcakes</h4></a>
-        							<p>Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply.</p>
+        							<p>Experience a burst of flavor with our moist, creamy cupcakes, made with love and perfectly paired with fresh coffee or tea!</p>
         						</div>
         					</div>
         				</div>
@@ -310,7 +316,7 @@
         						</div>
         						<div class="media-body">
         							<a href="#"><h4>Wedding Cakes</h4></a>
-        							<p>Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply.</p>
+        							<p>Make your special day extraordinary with our elegant wedding cakes, tailored to your taste and style.</p>
         						</div>
         					</div>
         				</div>
@@ -323,7 +329,7 @@
         						</div>
         						<div class="media-body">
         							<a href="#"><h4>Awesome Recipes</h4></a>
-        							<p>Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply.</p>
+        							<p>Unleash your inner chef with our collection of mouthwatering recipes that are simple and fun to try.</p>
         						</div>
         					</div>
         				</div>
@@ -336,7 +342,7 @@
         						</div>
         						<div class="media-body">
         							<a href="#"><h4>Menu Planner</h4></a>
-        							<p>Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply.</p>
+        							<p>Plan the perfect menu for any event with our expert guidance and a selection of curated dishes to suit every taste!</p>
         						</div>
         					</div>
         				</div>
@@ -349,7 +355,7 @@
         						</div>
         						<div class="media-body">
         							<a href="#"><h4>Home Delivery</h4></a>
-        							<p>Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply.</p>
+        							<p>Enjoy your favorite treats from the comfort of your home with our reliable and speedy delivery service.</p>
         						</div>
         					</div>
         				</div>
@@ -369,7 +375,13 @@
        				<div class="row">
        					<div class="col-lg-6">
        						<div class="discover_item_inner">
+								{% for item in cupcake %}
        							<div class="discover_item">
+									<h4>{{item.name}}</h4>
+									<p>{{item.description}} <span>$8.99</span></p>
+								</div>
+								{% endfor %}
+       							{% comment %} <div class="discover_item">
 									<h4>Double Chocolate Pie</h4>
 									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>
 								</div>
@@ -380,16 +392,18 @@
        							<div class="discover_item">
 									<h4>Double Chocolate Pie</h4>
 									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>
-								</div>
-       							<div class="discover_item">
-									<h4>Double Chocolate Pie</h4>
-									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>
-								</div>
+								</div> {% endcomment %}
        						</div>
        					</div>
        					<div class="col-lg-6">
        						<div class="discover_item_inner">
-       							<div class="discover_item">
+								{% for item in cupcake %}
+								<div class="discover_item">
+									<h4>{{item.name}}</h4>
+									<p>{{item.description}} <span>$8.99</span></p>
+							 	</div>
+								 {% endfor %}
+       							{% comment %} <div class="discover_item">
 									<h4>Double Chocolate Pie</h4>
 									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>
 								</div>
@@ -400,15 +414,11 @@
        							<div class="discover_item">
 									<h4>Double Chocolate Pie</h4>
 									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>
-								</div>
-       							<div class="discover_item">
-									<h4>Double Chocolate Pie</h4>
-									<p>Chocolate puding, vanilla, fruite rasberry jam milk <span>$8.99</span></p>
-								</div>
+								</div> {% endcomment %}
        						</div>
        					</div>
        					<div class="col-lg-12">
-       						<a class="pest_btn" href="#">View Full Menu</a>
+       						<a class="pest_btn" href="{% url "menu" %}">View Full Menu</a>
        					</div>
        				</div>
         		</div>
@@ -431,7 +441,7 @@
         			<div class="col-lg-3 col-6">
         				<div class="chef_item">
         					<div class="chef_img">
-        						<img class="img-fluid" src="img/chef/chef-1.jpg" alt="">
+        						<img class="img-fluid" src="{% static "app/img/chef/chef-1.jpg" %}" alt="">
         						<ul class="list_style">
         							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
         							<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
@@ -446,7 +456,7 @@
         			<div class="col-lg-3 col-6">
         				<div class="chef_item">
         					<div class="chef_img">
-        						<img class="img-fluid" src="img/chef/chef-2.jpg" alt="">
+        						<img class="img-fluid" src="{% static "app/img/chef/chef-2.jpg" %}" alt="">
         						<ul class="list_style">
         							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
         							<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
@@ -461,7 +471,7 @@
         			<div class="col-lg-3 col-6">
         				<div class="chef_item">
         					<div class="chef_img">
-        						<img class="img-fluid" src="img/chef/chef-3.jpg" alt="">
+        						<img class="img-fluid" src="{% static "app/img/chef/chef-3.jpg" %}" alt="">
         						<ul class="list_style">
         							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
         							<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
@@ -488,7 +498,7 @@
         			<div class="col-lg-6 col-sm-7">
         				<div class="arivals_chocolate">
         					<div class="arivals_pic">
-        						<img class="img-fluid" src="img/cake-feature/arivals-pic.jpg" alt="">
+        						<img class="img-fluid" src="{% static "app/img/cake-feature/arivals-pic.jpg" %}" alt="">
         						<div class="price_text">
         							<h5>$39</h5>
         						</div>
@@ -501,10 +511,38 @@
         			</div>
         			<div class="col-lg-6">
         				<div class="arivals_slider owl-carousel">
+
+							{% for item in cupcake %}
         					<div class="item">
         						<div class="cake_feature_item">
 									<div class="cake_img">
-										<img src="img/cake-feature/arivals-1.jpg" alt="">
+										<img src="{{item.image.url}}" alt="">
+									</div>
+									<div class="cake_text">
+										<h4>${{item.price}}</h4>
+										<h3>{{item.name}}</h3>
+										<a class="pest_btn" href="#">Add to cart</a>
+									</div>
+								</div>
+        					</div>
+							{% endfor %}
+
+        					{% comment %} <div class="item">
+        						<div class="cake_feature_item">
+									<div class="cake_img">
+										<img src="{% static "app/img/cake-feature/arivals-2.jpg" %}" alt="">
+									</div>
+									<div class="cake_text">
+										<h4>$29</h4>
+										<h3>Chocolate Cupcakes</h3>
+										<a class="pest_btn" href="#">Add to cart</a>
+									</div>
+								</div>
+        					</div>
+        					<div class="item">
+        						<div class="cake_feature_item">
+									<div class="cake_img">
+										<img src="{% static "app/img/cake-feature/arivals-1.jpg" %}" alt="">
 									</div>
 									<div class="cake_text">
 										<h4>$29</h4>
@@ -516,7 +554,7 @@
         					<div class="item">
         						<div class="cake_feature_item">
 									<div class="cake_img">
-										<img src="img/cake-feature/arivals-2.jpg" alt="">
+										<img src="{% static "app/img/cake-feature/arivals-2.jpg" %}" alt="">
 									</div>
 									<div class="cake_text">
 										<h4>$29</h4>
@@ -524,31 +562,7 @@
 										<a class="pest_btn" href="#">Add to cart</a>
 									</div>
 								</div>
-        					</div>
-        					<div class="item">
-        						<div class="cake_feature_item">
-									<div class="cake_img">
-										<img src="img/cake-feature/arivals-1.jpg" alt="">
-									</div>
-									<div class="cake_text">
-										<h4>$29</h4>
-										<h3>Strawberry Cupcakes</h3>
-										<a class="pest_btn" href="#">Add to cart</a>
-									</div>
-								</div>
-        					</div>
-        					<div class="item">
-        						<div class="cake_feature_item">
-									<div class="cake_img">
-										<img src="img/cake-feature/arivals-2.jpg" alt="">
-									</div>
-									<div class="cake_text">
-										<h4>$29</h4>
-										<h3>Chocolate Cupcakes</h3>
-										<a class="pest_btn" href="#">Add to cart</a>
-									</div>
-								</div>
-        					</div>
+        					</div> {% endcomment %}
         				</div>
         			</div>
         		</div>
@@ -567,7 +581,7 @@
        				<div class="col-lg-4 col-md-6">
        					<div class="l_news_image">
        						<div class="l_news_img">
-       							<img class="img-fluid" src="img/blog/latest-news/l-news-1.jpg" alt="">
+       							<img class="img-fluid" src="{% static "app/img/blog/latest-news/l-news-1.jpg" %}" alt="">
        						</div>
        						<div class="l_news_hover">
        							<a href="#"><h5>Oct 15, 2016</h5></a>
@@ -578,7 +592,7 @@
        				<div class="col-lg-4 col-md-6">
        					<div class="l_news_item">
        						<div class="l_news_img">
-       							<img class="img-fluid" src="img/blog/latest-news/l-news-2.jpg" alt="">
+       							<img class="img-fluid" src="{% static "app/img/blog/latest-news/l-news-2.jpg" %}" alt="">
        						</div>
        						<div class="l_news_text">
        							<a href="#"><h5>Oct 15, 2016</h5></a>
@@ -590,7 +604,7 @@
        				<div class="col-lg-4 col-md-6">
        					<div class="l_news_item">
        						<div class="l_news_img">
-       							<img class="img-fluid" src="img/blog/latest-news/l-news-3.jpg" alt="">
+       							<img class="img-fluid" src="{% static "app/img/blog/latest-news/l-news-3.jpg" %}" alt="">
        						</div>
        						<div class="l_news_text">
        							<a href="#"><h5>Oct 15, 2016</h5></a>
