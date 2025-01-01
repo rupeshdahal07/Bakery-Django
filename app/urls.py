@@ -20,8 +20,12 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),  # Corresponds to Checkout
     path('shop/', views.shop, name='main_shop'),  # Corresponds to Shop
 
+    path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'),
     path('accounts/login/', auth_view.LoginView.as_view(template_name='app/login.html', 
                                                         authentication_form=LoginForm),
                                                         name='login'),
+    path('logout/' ,auth_view.LogoutView.as_view(next_page ='login'), name='logout'),
+
+    
 
 ]+ static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)

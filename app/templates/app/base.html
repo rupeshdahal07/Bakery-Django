@@ -88,6 +88,15 @@
 								<li><a href="{% url "our_cake" %}">Our Cakes</a></li>
 								<li><a href="{% url "menu" %}">Menu</a></li>
 								<li class="dropdown submenu">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+									<ul class="dropdown-menu">
+										<li><a href="{% url "main_shop" %}">Main shop</a></li>
+										<li><a href="product-details.html">Product Details</a></li>
+										<li><a href="{% url "cart" %}">Cart Page</a></li>
+										<li><a href="{% url "checkout" %}">Checkout Page</a></li>
+									</ul>
+								</li>
+								<li class="dropdown submenu">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
 									<ul class="dropdown-menu">
 										<li><a href="{% url "about" %}">About Us</a></li>
@@ -95,6 +104,7 @@
 										<li><a href="testimonials.html">Testimonials</a></li>
 									</ul>
 								</li>
+								
 								{% comment %} <li class="dropdown submenu">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
 									<ul class="dropdown-menu">
@@ -121,17 +131,26 @@
 										<li><a href="single-blog.html">Blog details</a></li>
 									</ul>
 								</li>
+								
+								<li><a href="{% url "contact" %}">Contact Us</a></li>
+								
 								<li class="dropdown submenu">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accounts</a>
 									<ul class="dropdown-menu">
-										<li><a href="{% url "main_shop" %}">Main shop</a></li>
-										<li><a href="product-details.html">Product Details</a></li>
-										<li><a href="{% url "cart" %}">Cart Page</a></li>
-										<li><a href="{% url "checkout" %}">Checkout Page</a></li>
+										{% if request.user.is_authenticated %}
+										<li>
+											<form action="/logout/" method="POST">
+											  {% csrf_token %}
+											<button type="submit" class='dropdown-item'>Logout</button>
+										  	</form>
+										  </li>
+										  <li><a href="{% url "home" %}">Profile</a></li>  
+										{% else %}
+										<li><a href="{% url "login" %}">Login</a></li>
+										<li><a href="{% url "customerregistration" %}">Registration</a></li>
+										{% endif %}
 									</ul>
 								</li>
-								<li><a href="{% url "contact" %}">Contact Us</a></li>
-								<li><a href="{% url "login" %}">Login</a></li>
 							</ul>
 						</div>
 					</nav>
