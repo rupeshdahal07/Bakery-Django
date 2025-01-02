@@ -21,3 +21,15 @@ class LoginForm(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(attrs={'autofocus':True, 'class':'form-control'}))
     password = forms.CharField(label=_('Password'), strip=False, widget=forms.PasswordInput(attrs={'autocomplete':'current-complete', 'class':'form-control'}))
     
+
+
+
+
+class CustomerProfileForm(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = ['name', 'email', 'phone_number', 'address']
+        widgets = {'name': forms.TextInput(attrs={'class':'form-control' }), 
+                   'email': forms.TextInput(attrs={'class':'form-control' }),
+                   'phone_number': forms.TextInput(attrs={'class':'form-control' }),
+                   'address': forms.TextInput(attrs={'class':'form-control' })}

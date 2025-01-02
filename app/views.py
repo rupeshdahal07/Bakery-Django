@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .models import BakeryItem, Beverage, Customer, Order
-from .forms import CustomerRegistratinForm
+from .forms import CustomerRegistratinForm, CustomerProfileForm
 from django.contrib import messages
 
 # Create your views here.
@@ -55,7 +55,31 @@ def shop(request):
     return render(request, 'app/shop.html')
 
 
+
+class ProfileView(View):
+    '''This class-based view will render the profile page and display the customer's profile'''
+    def get(self, request):
+        form = CustomerProfileForm()
+        return render(request, 'app/customerprofile.html', {'form': form, 'active': 'btn-primary'})
+    
+    def post(self, request):
+        form = CustomerProfileForm(request.POST)
+        
+        if form.is_valid():
+            usr = request.user
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            phone_number = form.cleaned_data['phone_number']
+            address = form.cleaned_data['address']
+            customer = Customer(user=usr, name=name, email=email, phone_number=phone_number, address=address)
+            customer.save()
+            messages.success(request, 'Profile updated successfully')
+        return render(request, 'app/customerprofile.html', {'form': form, 'active': 'btn-primary'})
+
+
+
 class CustomerRegistrationView(View):
+    '''This class-based view will render the registration page and allow the customer'''
     def get(self, request):
         form = CustomerRegistratinForm()
         return render(request, 'app/registration.html', {'form': form})

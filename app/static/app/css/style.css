@@ -698,6 +698,8 @@ i:before {
   border-bottom: 1px solid #dcdcdc;
 }
 
+
+
 .main_menu_area .navbar.navbar-expand-lg .navbar-nav li.submenu .dropdown-menu li a:before {
   display: none;
 }

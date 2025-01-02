@@ -138,13 +138,15 @@
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accounts</a>
 									<ul class="dropdown-menu">
 										{% if request.user.is_authenticated %}
-										<li>
-											<form action="/logout/" method="POST">
+										
+										  <li><a href="{% url "profile" %}">Profile</a></li>
+										  <li><a href="{% url "cart" %}">Cart</a></li>  
+										  <li>
+											<form  action="/logout/" method="POST">
 											  {% csrf_token %}
 											<button type="submit" class='dropdown-item'>Logout</button>
 										  	</form>
 										  </li>
-										  <li><a href="{% url "home" %}">Profile</a></li>  
 										{% else %}
 										<li><a href="{% url "login" %}">Login</a></li>
 										<li><a href="{% url "customerregistration" %}">Registration</a></li>
