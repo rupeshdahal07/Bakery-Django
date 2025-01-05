@@ -378,7 +378,7 @@
 								{% for item in cupcake %}
        							<div class="discover_item">
 									<h4>{{item.name}}</h4>
-									<p>{{item.description}} <span>$8.99</span></p>
+									<p>{{item.description}} <span>Rs.{{item.price|floatformat:0}}</span></p>
 								</div>
 								{% endfor %}
        							{% comment %} <div class="discover_item">

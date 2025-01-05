@@ -19,7 +19,9 @@ urlpatterns = [
     path('cart/', views.cart, name='cart'),  # Corresponds to Cart
     path('checkout/', views.checkout, name='checkout'),  # Corresponds to Checkout
     path('shop/', views.shop, name='main_shop'),  # Corresponds to Shop
+    path('shop/<slug:data>', views.shop, name='shopdata'),  # Corresponds to Shop
     path('profile/', views.ProfileView.as_view(), name='profile'),  # Corresponds to Profile
+    path('address/', views.address, name='address'),  # Corresponds to Address
 
     path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'),
     path('accounts/login/', auth_view.LoginView.as_view(template_name='app/login.html', 

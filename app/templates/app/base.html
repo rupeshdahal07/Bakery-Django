@@ -87,15 +87,15 @@
 								</li>
 								<li><a href="{% url "our_cake" %}">Our Cakes</a></li>
 								<li><a href="{% url "menu" %}">Menu</a></li>
-								<li class="dropdown submenu">
+								<li><a href="{% url "main_shop" %}">Main shop</a></li>
+								{% comment %} <li class="dropdown submenu">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
 									<ul class="dropdown-menu">
 										<li><a href="{% url "main_shop" %}">Main shop</a></li>
 										<li><a href="product-details.html">Product Details</a></li>
-										<li><a href="{% url "cart" %}">Cart Page</a></li>
-										<li><a href="{% url "checkout" %}">Checkout Page</a></li>
+										
 									</ul>
-								</li>
+								</li> {% endcomment %}
 								<li class="dropdown submenu">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
 									<ul class="dropdown-menu">
@@ -134,13 +134,14 @@
 								
 								<li><a href="{% url "contact" %}">Contact Us</a></li>
 								
-								<li class="dropdown submenu">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accounts</a>
+								<li class="dropdown submenu active">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{request.user.username|capfirst}}</a>
 									<ul class="dropdown-menu">
 										{% if request.user.is_authenticated %}
 										
 										  <li><a href="{% url "profile" %}">Profile</a></li>
-										  <li><a href="{% url "cart" %}">Cart</a></li>  
+										  <li><a href="{% url "cart" %}">Cart</a></li> 
+										  <li><a href="{% url "checkout" %}">Checkout</a></li> 
 										  <li>
 											<form  action="/logout/" method="POST">
 											  {% csrf_token %}

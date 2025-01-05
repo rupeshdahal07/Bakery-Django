@@ -3,6 +3,7 @@ from django.views import View
 from .models import BakeryItem, Beverage, Customer, Order
 from .forms import CustomerRegistratinForm, CustomerProfileForm
 from django.contrib import messages
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class HomeView(View):
@@ -51,8 +52,16 @@ def cart(request):
 def checkout(request):
     return render(request, 'app/checkout.html')
 
-def shop(request):
-    return render(request, 'app/shop.html')
+
+def shop(request, data=None):
+    '''This function-based view will render the shop page and display the available bakery items'''
+    if data == None:
+        bakery_items = BakeryItem.objects.all()
+    elif data == 'Cupcake':
+        bakery_items = BakeryItem.objects.filter(category=data)
+    elif data == 'Cake':
+        bakery_items = BakeryItem.objects.filter(category=dat)
+    return render(request, 'app/shop.html', {'bakery_items': bakery_items})
 
 
 
@@ -90,3 +99,10 @@ class CustomerRegistrationView(View):
             messages.success(request, 'Contratulations! Regisered Sucessfully')
             form.save()
         return render(request, 'app/registration.html', {'form': form})
+
+
+
+def address(request):
+    '''This function-based view will render the address page and display the customer's address'''
+    address = Customer.objects.filter(user = request.user)
+    return render(request, 'app/address.html', {'address': address, 'active': 'btn btn-primary'})

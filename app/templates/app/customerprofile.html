@@ -4,12 +4,13 @@
 {% block main-content %}
 <section>
     <div class="container my-5 py-5">
+      <h3>Welcome {{request.user.username|capfirst}}</h3>
         <div class="row-2">
-           <h3>Welcome {{request.user.username|capfirst}}</h3>
+           
              <div class="col-sm-2 border-end me-auto ">
                <ul class="list-unstyled">
                  <li class="d-grid"><a href="{% url 'profile' %}" class="btn {{active}}">Profile</a></li>
-                 <li class="d-grid"><a href="#" class="btn ">Address</a></li>
+                 <li class="d-grid"><a href="{% url 'address' %}" class="btn ">Address</a></li>
                </ul>
              </div>
              <div class="col-sm-8 offset-sm-1">
