@@ -35,7 +35,7 @@
 								{% for item in cupcake %}
        							<div class="discover_item">
 									<h4>{{item.name}}</h4>
-									<p>{{item.description}} <span>रु.{{item.price|floatformat:0}}</span></p>
+									<p>{{item.description|truncatewords:8}} <span>रु.{{item.price|floatformat:0}}</span></p>
 								</div>
 								{% endfor %}
 
@@ -46,7 +46,7 @@
 								{% for item in cupcake %}
        							<div class="discover_item">
 									<h4>{{item.name}}</h4>
-									<p>{{item.description}} <span>रु.{{item.price|floatformat:0}}</span></p>
+									<p>{{item.description|truncatewords:8}} <span>रु.{{item.price|floatformat:0}}</span></p>
 								</div>
 								{% endfor %}
        							{% comment %} <div class="discover_item">

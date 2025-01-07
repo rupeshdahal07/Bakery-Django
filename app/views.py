@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from .models import BakeryItem, Beverage, Customer, Order
+from .models import BakeryItem, Beverage, Customer, Order, OrderItem
 from .forms import CustomerRegistratinForm, CustomerProfileForm
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
@@ -9,9 +9,15 @@ from django.shortcuts import get_object_or_404
 class HomeView(View):
     '''This class-based view will render the home page. and display the available bakery items'''
     def get(self, request):
-        cupcake = BakeryItem.objects.filter(category='Cupcake')
+        cupcake_for_featured = BakeryItem.objects.filter(category='Cupcake')[ :4]
+        cake_for_featured = BakeryItem.objects.filter(category='Cake')[ :4]
+        cupcake = BakeryItem.objects.filter(category='Cupcake')[ :6]
+        cake = BakeryItem.objects.filter(category='Cake')[ :6]
         return render(request, 'app/index-2.html', 
-                      {'cupcake': cupcake
+                      {'cupcake': cupcake,
+                        'cake': cake,
+                        'cupcake_for_featured': cupcake_for_featured,
+                        'cake_for_featured': cake_for_featured
                        
                        })
     
@@ -31,14 +37,26 @@ def home4(request):
 def home5(request):
     return render(request, 'app/index-5.html')
 
+class ProductDetailView(View):
+    '''This class-based view will render the product detail page and display the details of the selected bakery item'''
+    def get(self, request, pk):
+        item = get_object_or_404(BakeryItem, pk=pk)
+        return render(request, 'app/product-details.html', {'item': item})
+
+    def post(self, request, pk):
+        item = get_object_or_404(BakeryItem, pk=pk)
+        return render(request, 'app/product-details.html', {'item': item})
+
+
 def menu(request):
     '''This function-based view will render the menu page and display the available bakery items'''
     cupcake = BakeryItem.objects.filter(category='Cupcake')
     return render(request, 'app/menu.html', {'cupcake': cupcake})
 
 def our_cake(request):
-    cupcake = BakeryItem.objects.filter(category='Cupcake')
-    return render(request, 'app/cake.html', {'cupcake': cupcake})
+    cake = BakeryItem.objects.filter(category='Cake')
+    cake_special = BakeryItem.objects.filter(category='Cake')[:3]
+    return render(request, 'app/cake.html', {'cake': cake, 'cake_special': cake_special} )
 
 def about(request):
     return render(request, 'app/about-us.html')
@@ -48,6 +66,12 @@ def contact(request):
 
 def cart(request):
     return render(request, 'app/cart.html')
+
+def add_to_cart(request, pk):
+    user = request.user
+    BakeryItem = get_object_or_404(BakeryItem, pk=pk)
+    OrderItem(user=user, item=BakeryItem).save()
+
 
 def checkout(request):
     return render(request, 'app/checkout.html')
