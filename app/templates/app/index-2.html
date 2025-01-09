@@ -197,7 +197,7 @@
 							<div class="cake_text">
 								<a href="{% url "product-details" item.id %}"><h4>{{item.price|floatformat:0}}</h4></a>
 								<a href="{% url "product-details" item.id %}"><h3>{{item.name}}</h3></a>
-								<a class="pest_btn" href="#">Add to cart</a>
+								<a class="pest_btn" href="{% url "add-to-cart" item.id %}">Add to cart</a>
 							</div>
 						</div>
 					</div>

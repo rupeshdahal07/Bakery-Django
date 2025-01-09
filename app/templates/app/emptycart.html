@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block main-content %} 
+    <!--================End Main Header Area =================-->
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text">
+                <h3>Cart</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--================End Main Header Area =================-->
+     <!--================Cart Table Area =================-->
+     <section class="cart_table_area py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-6">
+                    <img src="{% static 'app/img/special/special-1.png' %}" alt="Empty Cart" class="img-fluid mb-4">
+                    <h3 class="mb-4">Your cart is empty</h3>
+                    <a href="{% url 'home' %}" class="pest_btn">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main-content %}

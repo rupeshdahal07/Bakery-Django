@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-from .models import BakeryItem, Beverage, Customer, Order, OrderItem, OrderBeverage
+from .models import BakeryItem, Beverage, Customer, Order, OrderItem, OrderBeverage, Cart
 
 # Customize BakeryItem Admin
 @admin.register(BakeryItem)
@@ -57,3 +57,11 @@ class OrderBeverageAdmin(admin.ModelAdmin):
     list_display = ('order', 'beverage', 'quantity')
     list_filter = ('order',)
     search_fields = ('order__id', 'beverage__name')
+
+# Customize Cart Admin
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
+    list_display = ('user', 'product', 'quantity')
+    list_filter = ('user',)
+    search_fields = ('user__username', 'product__name')
+    ordering = ('-id',)

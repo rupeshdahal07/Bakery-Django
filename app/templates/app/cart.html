@@ -33,24 +33,29 @@
 							</tr>
 						</thead>
 						<tbody>
+
+
+
+							{% for item in carts %}
 							<tr>
 								<td>
-									<img src="{% static "app/img/product/cart-img.jpg" %}" alt="">
+									<img src="{{item.product.image.url}}" alt="">
 								</td>
-								<td>Wheel Axel</td>
-								<td>$25.00</td>
+								<td>{{item.product.name}}</td>
+								<td>Rs.{{item.product.price}}</td>
 								<td>
-									<select class="product_select">
-										{% comment %} <option data-display="1">1</option>
-										<option value="1">2</option>
-										<option value="2">3</option> 
-										<option value="4">4</option>
-										<option value="5">5</option> {% endcomment %}
-									</select>
+									<div class="my-3">
+										<label for="quantity">Quantity:</label>
+										<a class="minus-cart btn" pid="{{cart.product.id}}"><i class="fa fa-minus-square"></i></a>
+										  <span id="quantity">{{item.quantity}}</span>
+										<a class="plus-cart btn" pid= "{{cart.product.id}}"><i class="fa fa-plus-square" ></i></a>
+									   </div> 
+									<a href="#" class="btn btn-sm btn-secondary mr-3 remove-cart" >Remove item </a>
 								</td>
-								<td>$25.00</td>
+								<td>Rs.{{item.total_cost}}</td>
 								<td>X</td>
 							</tr>
+							{% endfor %}
 							<tr>
 								<td>
 									<form class="form-inline"> 
@@ -63,8 +68,8 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td></td>
-								<td>
+								{% comment %} <td></td> {% endcomment %}
+								<td colspan="2">
 									<a class="pest_btn" href="#">Add To Cart</a>
 								</td>
 							</tr>

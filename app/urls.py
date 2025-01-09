@@ -19,8 +19,8 @@ urlpatterns = [
     path('our-cake/', views.our_cake, name='our_cake'),  # Corresponds to Menu
     path('about/', views.about, name='about'),  # Corresponds to About   
     path('contact/', views.contact, name='contact'),  # Corresponds to Contact
-    path('cart/', views.cart, name='cart'),  # Corresponds to Cart 
-    path('add-to-cart/', views.add_to_cart, name='add-to-cart'),  # Corresponds to Add to Cart
+    path('cart/', views.show_cart, name='cart'),  # Corresponds to Cart 
+    path('add-to-cart/<int:pk> ', views.add_to_cart, name='add-to-cart'),  # Corresponds to Add to Cart
 
 
 

@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import View
-from .models import BakeryItem, Beverage, Customer, Order, OrderItem
+from .models import BakeryItem, Beverage, Customer, Order, OrderItem, Cart
 from .forms import CustomerRegistratinForm, CustomerProfileForm
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
@@ -69,9 +69,27 @@ def cart(request):
 
 def add_to_cart(request, pk):
     user = request.user
-    BakeryItem = get_object_or_404(BakeryItem, pk=pk)
-    OrderItem(user=user, item=BakeryItem).save()
+    product = get_object_or_404(BakeryItem, pk=pk)
+    print(BakeryItem)
+    Cart(user=user, product=product).save()
+    return redirect('/cart')
 
+def show_cart(request):
+    if request.user.is_authenticated:
+        user = request.user
+        cart = Cart.objects.filter(user=user)
+        amount = 0.0
+        shipping_amount = 70.0
+        total_amount = 0.0
+        cart_product = [p for p in Cart.objects.all() if p.user == user]
+        if cart_product:
+            for p in cart_product:
+                tempamount = float(p.quantity * p.product.price)
+                amount += tempamount
+            total_amount = amount + shipping_amount
+            return render(request, 'app/cart.html', {'carts': cart, 'total_amount': total_amount, 'amount': amount})
+        else:
+            return render(request, 'app/emptycart.html')
 
 def checkout(request):
     return render(request, 'app/checkout.html')

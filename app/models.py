@@ -55,7 +55,18 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.user.username
-
+#cart
+class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(BakeryItem, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+    
+    def __str__(self):
+        return str(self.id)
+    @property
+    def total_cost(self):
+        return self.quantity * self.product.price
+     
 # Model for Orders
 class Order(models.Model):
     class OrderStatus(models.TextChoices):
