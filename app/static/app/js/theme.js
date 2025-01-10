@@ -457,3 +457,7 @@
 	
 	
 })(jQuery)
+
+
+// This is for cart plus and minus
+

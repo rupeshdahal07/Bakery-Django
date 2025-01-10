@@ -97,13 +97,25 @@ def checkout(request):
 
 def shop(request, data=None):
     '''This function-based view will render the shop page and display the available bakery items'''
+    total_cakes = len(BakeryItem.objects.filter(category="Cake"))
+    total_cupcakes = len(BakeryItem.objects.filter(category="Cupcake"))
+    total_doughnuts = len(BakeryItem.objects.filter(category="Doughnut"))
+    total_items = len(BakeryItem.objects.all())
+
     if data == None:
         bakery_items = BakeryItem.objects.all()
     elif data == 'Cupcake':
         bakery_items = BakeryItem.objects.filter(category=data)
     elif data == 'Cake':
-        bakery_items = BakeryItem.objects.filter(category=dat)
-    return render(request, 'app/shop.html', {'bakery_items': bakery_items})
+        bakery_items = BakeryItem.objects.filter(category=data)
+    elif data == 'Doughnut':
+        bakery_items = BakeryItem.objects.filter(category=data)
+    return render(request, 'app/shop.html', {'bakery_items': bakery_items,
+                                             'total_cakes': total_cakes,
+                                             'total_cupcakes': total_cupcakes,
+                                             'total_doughnuts': total_doughnuts,
+                                                'total_items': total_items
+                                             })
 
 
 
