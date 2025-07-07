@@ -37,6 +37,7 @@ def home4(request):
 def home5(request):
     return render(request, 'app/index-5.html')
 
+
 class ProductDetailView(View):
     '''This class-based view will render the product detail page and display the details of the selected bakery item'''
     def get(self, request, pk):
@@ -116,6 +117,7 @@ def shop(request, data=None):
                                              'total_doughnuts': total_doughnuts,
                                                 'total_items': total_items
                                              })
+
 
 
 
