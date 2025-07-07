@@ -21,3 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')), # Add this line to include the app's urls in the project
 ]
+

@@ -65,3 +65,9 @@ class CartAdmin(admin.ModelAdmin):
     list_filter = ('user',)
     search_fields = ('user__username', 'product__name')
     ordering = ('-id',)
+    
+
+
+admin.site.site_header = "Wake And Bake Admin"
+admin.site.site_title = "Wake And Bake Admin Admin Portal"
+admin.site.index_title = "Welcome to Admin"
